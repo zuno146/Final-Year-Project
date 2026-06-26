@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Add Vendor</title>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg, #F8FAFC 0%, #EEF6FF 100%);
+}
+
+.container{
+    width:420px;
+    background:#fff;
+    padding:40px;
+    border-radius:18px;
+    border:1px solid #E5E7EB;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+h1{
+    text-align:center;
+    color:#1F2937;
+    margin-bottom:30px;
+    font-size:32px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:2px solid #E5E7EB;
+    border-radius:10px;
+    font-size:16px;
+    margin-bottom:25px;
+    background:#FAFAFA;
+    transition:.3s;
+}
+
+input:focus{
+    outline:none;
+    border-color:#22C55E;
+    background:#fff;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#22C55E;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#16A34A;
+    transform:translateY(-2px);
+}
+
+button:active{
+    transform:scale(.98);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Add Vendor</h1>
+
+    <input type="text" id="vendorName" placeholder="Enter Mall Name">
+
+    <button id="addVendorBtn">Add Vendor</button>
+</div>
+
+<script src="add.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+h1{
+    font-size:50px;
+    font-weight:700;
+    color:#22C55E;
+    margin-bottom:25px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+h1 span{
+    color:#22C55E;
+}
+body{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:linear-gradient(135deg, #F8FAFC 0%, #EEF6FF 100%);
+    font-family:Arial, sans-serif;
+}
+
+.calculator{
+    width:340px;
+    background:black;
+    border-radius:15px;
+    padding:12px;
+    box-shadow:0 0 25px rgba(0,0,0,0.6);
+}
+
+.display{
+    height:100px;
+    background:ghostwhite;
+    border-radius:10px;
+    margin-bottom:12px;
+    text-align:right;
+    font-size:50px;
+    padding:15px;
+    font-weight:bold;
+    overflow:hidden;
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+}
+
+button{
+    height:75px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:30px;
+    background:#1e1e1e;
+    color:white;
+    transition:0.2s;
+}
+
+button:hover{
+    opacity:0.8;
+}
+
+.orange{
+    background:orange;
+}
+
+.grey{
+    background:grey;
+}
+</style>
+
+</head>
+<body>
+<h1>Shopex</h1>
+<div class="calculator">
+
+    <div id="display" class="display">0</div>
+
+    <div class="buttons">
+
+        <button class="grey" onclick="backspace()">⌫</button>
+        <button class="grey" onclick="clearDisplay()">AC</button>
+        <button class="grey" onclick="percentage()">%</button>
+        <button class="orange" onclick="append('/')">÷</button>
+
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button class="orange" onclick="append('*')">×</button>
+
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button class="orange" onclick="append('-')">−</button>
+
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button class="orange" onclick="append('+')">+</button>
+
+        <button onclick="toggleSign()">+/-</button>
+        <button onclick="append('0')">0</button>
+        <button onclick="append('.')">.</button>
+        <button class="orange" onclick="calculate()">=</button>
+
+    </div>
+
+</div>
+
+<script>
+
+let display = document.getElementById("display");
+
+function append(value){
+
+    if(display.innerText === "0"){
+        display.innerText = value;
+    }
+    else{
+        display.innerText += value;
+    }
+}
+
+function clearDisplay(){
+    display.innerText = "0";
+}
+
+function backspace(){
+
+    let text = display.innerText;
+
+    if(text.length === 1){
+        display.innerText = "0";
+    }
+    else{
+        display.innerText = text.slice(0,-1);
+    }
+}
+
+function calculate(){
+
+    try{
+
+        let expression = display.innerText;
+
+        let result = eval(expression);
+
+        display.innerText = result;
+
+    }
+    catch{
+        display.innerText = "Error";
+    }
+}
+
+function percentage(){
+
+    try{
+        let value = eval(display.innerText);
+        display.innerText = value / 100;
+    }
+    catch{
+        display.innerText = "Error";
+    }
+}
+
+function toggleSign(){
+
+    let value = display.innerText;
+
+    if(value === "0") return;
+
+    if(value.startsWith("-")){
+        display.innerText = value.slice(1);
+    }
+    else{
+        display.innerText = "-" + value;
+    }
+}
+
+document.addEventListener("keydown",(e)=>{
+
+    if("0123456789.+-*/".includes(e.key)){
+        append(e.key);
+    }
+
+    if(e.key === "Enter"){
+        calculate();
+    }
+
+    if(e.key === "Backspace"){
+        backspace();
+    }
+
+    if(e.key === "Escape"){
+        clearDisplay();
+    }
+});
+
+</script>
+
+</body>
+</html>

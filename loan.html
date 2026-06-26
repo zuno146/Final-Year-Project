@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan | Shopex</title>
+    <style>
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#F8FAFC,#EEF6FF);
+    color:#1F2937;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    width:100%;
+    height:75px;
+    background:#1F2937;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 60px;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.navbar h1{
+    color:#22C55E;
+    font-size:32px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.navbar div{
+    display:flex;
+    gap:10px;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.navbar a:hover{
+    background:#22C55E;
+    color:#1F2937;
+}
+
+/* ================= MAIN CARD ================= */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+    background:white;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.container h1{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:10px;
+    color:#1F2937;
+}
+
+#date{
+    text-align:center;
+    color:#2563EB;
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:30px;
+}
+
+/* ================= INPUTS ================= */
+
+.input-box{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.input-box input{
+    width:260px;
+    padding:14px;
+    border:2px solid #E5E7EB;
+    border-radius:10px;
+    font-size:16px;
+    background:#FAFAFA;
+    transition:.3s;
+}
+
+.input-box input:focus{
+    outline:none;
+    border-color:#22C55E;
+    background:white;
+    box-shadow:0 0 8px rgba(34,197,94,.2);
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.buttons button{
+    background:#22C55E;
+    color:white;
+    border:none;
+    padding:14px 28px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.buttons button:hover{
+    background:#16A34A;
+    transform:translateY(-2px);
+}
+
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+thead th{
+    background:#1F2937;
+    color:white;
+    padding:15px;
+    font-size:16px;
+}
+
+tbody td{
+    padding:14px;
+    border:1px solid #E5E7EB;
+    text-align:center;
+}
+
+tbody tr:nth-child(even){
+    background:#F9FAFB;
+}
+
+tbody tr:hover{
+    background:#EEF6FF;
+}
+
+/* ================= EDIT BUTTON ================= */
+
+tbody button{
+    background:#F59E0B;
+    color:white;
+    border:none;
+    padding:8px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+tbody button:hover{
+    background:#D97706;
+}
+
+/* ================= TOTAL ROW ================= */
+
+tfoot th{
+    background:#22C55E;
+    color:white;
+    padding:15px;
+    font-size:16px;
+    border:1px solid white;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    margin-top:50px;
+    background:#1F2937;
+    color:white;
+    text-align:center;
+    padding:22px;
+    border-top:4px solid #22C55E;
+}
+
+.footer span{
+    color:#22C55E;
+    font-weight:700;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+        gap:15px;
+    }
+
+    .navbar div{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .container{
+        width:95%;
+        padding:25px;
+    }
+
+    .container h1{
+        font-size:32px;
+    }
+
+    .input-box{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .input-box input{
+        width:100%;
+        max-width:350px;
+    }
+
+    .buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .buttons button{
+        width:220px;
+    }
+
+    table{
+        font-size:14px;
+    }
+
+    th,
+    td{
+        padding:10px;
+    }
+}
+</style>
+</head>
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <div class="navbar">
+
+        <h1>Shopex</h1>
+<div>
+        <a href="index.html">Home</a>
+        <a href="sales.html">Sales</a>
+        <a href="expense.html">Expense</a>
+        <a href="profit.html">Profit</a>
+        <a href="loan.html">Loan</a>
+        <a href="purchase.html">Purchase</a>
+        <a href="calculator.html" target="_blank">Calculator</a>
+</div>
+    </div>
+
+    <!-- Loan Section -->
+
+    <div class="container">
+
+        <h1>Loan Record</h1>
+
+        <h3 id="date"></h3>
+
+        <div class="input-box">
+
+            <input
+                type="text"
+                id="customer"
+                placeholder="Customer Name">
+
+            <input
+                type="number"
+                id="loan"
+                placeholder="Loan Amount">
+
+        </div>
+
+        <div class="buttons">
+
+            <button onclick="addLoan()">
+                Add Loan
+            </button>
+
+            <button onclick="location.reload()">
+                Refresh
+            </button>
+
+            <button onclick="clearLoans()">
+                Clear Loans
+            </button>
+
+        </div>
+
+        <table>
+
+<thead>
+<tr>
+    <th>Customer</th>
+    <th>Loan (Rs)</th>
+    <th>Paid (Rs)</th>
+    <th>Remaining (Rs)</th>
+    <th>Action</th>
+</tr>
+</thead>
+
+            <tbody id="tableBody">
+
+            </tbody>
+
+            <tfoot>
+
+                <tr>
+
+                    <th>Total</th>
+
+                    <th id="totalLoan">Rs. 0</th>
+
+                    <th id="totalPaid">Rs. 0</th>
+
+                    <th id="totalRemaining">Rs. 0</th>
+
+                </tr>
+
+            </tfoot>
+
+        </table>
+
+    </div>
+
+    <footer class="footer">
+
+        <p>Made with ❤️ by <span>Zunaira Khan</span></p>
+
+    </footer>
+
+
+
+</body>
+    <script>
+        // =========================
+// Loan Array (Local Storage)
+// =========================
+
+let loans = JSON.parse(localStorage.getItem("loans")) || [];
+
+
+// =========================
+// Today's Date
+// =========================
+
+let today = new Date();
+
+let options = {
+
+    weekday:"long",
+    year:"numeric",
+    month:"long",
+    day:"numeric"
+
+};
+
+document.getElementById("date").innerHTML =
+"Today's Date : " + today.toLocaleDateString("en-PK", options);
+
+
+// =========================
+// Load Previous Loans
+// =========================
+
+function loadLoans(){
+
+    let totalLoan = 0;
+    let totalPaid = 0;
+    let totalRemaining = 0;
+
+    for(let i = 0; i < loans.length; i++){
+
+        let row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${loans[i].customer}</td>
+            <td>Rs. ${loans[i].loan}</td>
+            <td>Rs. ${loans[i].paid}</td>
+            <td>Rs. ${loans[i].remaining}</td>
+        `;
+
+        document.getElementById("tableBody").appendChild(row);
+
+        totalLoan += loans[i].loan;
+        totalPaid += loans[i].paid;
+        totalRemaining += loans[i].remaining;
+
+    }
+
+    document.getElementById("totalLoan").innerHTML =
+    "Rs. " + totalLoan;
+
+    document.getElementById("totalPaid").innerHTML =
+    "Rs. " + totalPaid;
+
+    document.getElementById("totalRemaining").innerHTML =
+    "Rs. " + totalRemaining;
+
+}
+
+loadLoans();
+
+
+// =========================
+// Add Loan
+// =========================
+function editLoan(btn){
+
+    let row = btn.parentElement.parentElement;
+
+    let paidCell = row.querySelector(".paid");
+    let remainingCell = row.querySelector(".remaining");
+
+    let amount = Number(prompt("Enter Paid Amount"));
+
+    if(isNaN(amount) || amount <= 0){
+        return;
+    }
+
+    let index = row.rowIndex - 1;
+
+    let loan = loans[index].loan;
+
+    loans[index].paid += amount;
+
+    if(loans[index].paid > loan){
+
+        alert("Paid amount cannot exceed loan.");
+
+        loans[index].paid -= amount;
+
+        return;
+
+    }
+
+    loans[index].remaining =
+    loan - loans[index].paid;
+
+    paidCell.innerHTML =
+    "Rs. " + loans[index].paid;
+
+    remainingCell.innerHTML =
+    "Rs. " + loans[index].remaining;
+
+    localStorage.setItem(
+        "loans",
+        JSON.stringify(loans)
+    );
+
+    updateTotals();
+
+}
+function addLoan(){
+
+    let customer =
+    document.getElementById("customer").value.trim();
+
+    let loan =
+    Number(document.getElementById("loan").value);
+
+let paid = 0;
+
+
+    if(customer === "" || loan <= 0 || paid < 0){
+
+        alert("Please enter valid data.");
+        return;
+
+    }
+
+    if(paid > loan){
+
+        alert("Paid amount cannot be greater than Loan amount.");
+        return;
+
+    }
+
+let remaining = loan;
+
+    loans.push({
+
+        customer: customer,
+        loan: loan,
+        paid: paid,
+        remaining: remaining
+
+    });
+
+    localStorage.setItem("loans", JSON.stringify(loans));
+
+    let row = document.createElement("tr");
+
+row.innerHTML = `
+<td>${customer}</td>
+<td>Rs. ${loan}</td>
+<td class="paid">Rs. ${paid}</td>
+<td class="remaining">Rs. ${remaining}</td>
+<td>
+    <button onclick="editLoan(this)">Edit</button>
+</td>
+`;
+
+    document.getElementById("tableBody").appendChild(row);
+
+
+    // =========================
+    // Calculate Totals
+    // =========================
+
+    let totalLoan = loans.reduce(function(sum, value){
+
+        return sum + value.loan;
+
+    },0);
+
+    let totalPaid = loans.reduce(function(sum, value){
+
+        return sum + value.paid;
+
+    },0);
+
+    let totalRemaining = loans.reduce(function(sum, value){
+
+        return sum + value.remaining;
+
+    },0);
+
+
+    document.getElementById("totalLoan").innerHTML =
+    "Rs. " + totalLoan;
+
+    document.getElementById("totalPaid").innerHTML =
+    "Rs. " + totalPaid;
+
+    document.getElementById("totalRemaining").innerHTML =
+    "Rs. " + totalRemaining;
+
+
+    // =========================
+    // Console Output
+    // =========================
+
+    console.clear();
+
+    console.log("------ Loan Array ------");
+
+    console.log(loans);
+
+    console.log("------ Loan Details ------");
+
+    for(let i = 0; i < loans.length; i++){
+
+        console.log(
+
+            "Customer : " + loans[i].customer +
+            " | Loan : Rs. " + loans[i].loan +
+            " | Paid : Rs. " + loans[i].paid +
+            " | Remaining : Rs. " + loans[i].remaining
+
+        );
+
+    }
+
+    console.log("Total Loan = Rs. " + totalLoan);
+    console.log("Total Paid = Rs. " + totalPaid);
+    console.log("Total Remaining = Rs. " + totalRemaining);
+
+
+    // =========================
+    // Clear Inputs
+    // =========================
+
+    document.getElementById("customer").value = "";
+    document.getElementById("loan").value = "";
+    document.getElementById("paid").value = "";
+
+}
+
+
+// =========================
+// Clear All Loans
+// =========================
+
+function clearLoans(){
+
+    if(confirm("Are you sure you want to delete all loan records?")){
+
+        localStorage.removeItem("loans");
+
+        location.reload();
+
+    }
+
+}
+    </script>
+</html>
