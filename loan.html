@@ -218,56 +218,46 @@ tfoot th{
 
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:900px){
-
-    .navbar{
-        flex-direction:column;
-        height:auto;
-        padding:20px;
-        gap:15px;
-    }
-
-    .navbar div{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
+@media (max-width:500px){
 
     .container{
         width:95%;
-        padding:25px;
+        padding:18px;
     }
 
     .container h1{
-        font-size:32px;
+        font-size:26px;
     }
 
-    .input-box{
+    .navbar div{
+        display:flex;
         flex-direction:column;
-        align-items:center;
+        width:100%;
+    }
+
+    .navbar a{
+        width:100%;
+        text-align:center;
+    }
+
+    .buttons button{
+        width:100%;
     }
 
     .input-box input{
         width:100%;
-        max-width:350px;
-    }
-
-    .buttons{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    .buttons button{
-        width:220px;
+        max-width:none;
     }
 
     table{
-        font-size:14px;
+        font-size:13px;
     }
 
-    th,
-    td{
-        padding:10px;
-    }
+}
+
+.table-container{
+    width:100%;
+    overflow-x:auto;
 }
 </style>
 </head>
@@ -327,7 +317,7 @@ tfoot th{
             </button>
 
         </div>
-
+<div class="table-container">
         <table>
 
 <thead>
@@ -361,7 +351,7 @@ tfoot th{
             </tfoot>
 
         </table>
-
+</div>
     </div>
 
     <footer class="footer">
