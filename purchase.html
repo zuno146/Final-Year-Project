@@ -4,7 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purchase</title>
-    <style>
+    <style>       *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg, #F8FAFC 0%, #EEF6FF 100%);
+}
         .navbar{
     width:100%;
     height:75px;
@@ -56,39 +69,7 @@
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width:768px){
 
-    .navbar{
-        flex-direction:column;
-        height:auto;
-        padding:20px;
-        gap:15px;
-    }
-
-    .navbar div{
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:10px;
-    }
-
-    .navbar h1{
-        margin-top:0;
-    }
-
-    .container{
-        width:90%;
-        max-width:550px;
-        margin:30px auto;
-        padding:25px;
-    }
-
-    label{
-        margin-left:0;
-        font-size:18px;
-    }
-
-}
 
 @media (max-width:500px){
 
@@ -112,30 +93,17 @@
 
 }
 
-       *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-    min-height:100vh;
-
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg, #F8FAFC 0%, #EEF6FF 100%);
-}
+       
 
 .container{
-    width:550px;
+    width:90%;
+    max-width:550px;
     background:#fff;
     padding:40px;
     border-radius:18px;
     border:1px solid #E5E7EB;
     box-shadow:0 15px 40px rgba(0,0,0,.08);
-    margin-left: 500px;
-    margin-top: 30px;
+    margin:30px auto;
 }
 
 h1{
@@ -144,16 +112,6 @@ h1{
     margin-bottom:35px;
     font-size:34px;
 }
-
-label{
-    display:block;
-    margin-bottom:8px;
-    color:#374151;
-    font-weight:600;
-    margin-left: 180px;
-    font-size: 30px;
-}
-
 input,
 select{
     width:100%;
@@ -172,6 +130,16 @@ select:focus{
     border-color:#22C55E;
     background:#fff;
 }
+
+label{
+    display:block;
+    margin-bottom:8px;
+    color:#374151;
+    font-weight:600;
+    font-size:18px;
+}
+
+input,
 .btn-group{
     display:flex;
     gap:15px;      /* Space between buttons */
@@ -212,6 +180,60 @@ select:focus{
 .footer span{
     color:#22c55e;
     font-weight:600;
+}
+@media (max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+        gap:15px;
+    }
+
+    .navbar div{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+
+    .navbar h1{
+        margin-top:0;
+    }
+
+    .container{
+        width:90%;
+        max-width:550px;
+        margin:30px auto;
+        padding:25px;
+    }
+
+    label{
+        margin-left:0;
+        font-size:18px;
+    }
+
+}
+@media (max-width:500px){
+
+    .container{
+        width:95%;
+        padding:20px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    .btn-group{
+        flex-direction:column;
+    }
+
+    .btn-group button,
+    .btn-group .btn{
+        width:100%;
+    }
+
 }
     </style>
 </head>
