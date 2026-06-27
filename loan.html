@@ -152,6 +152,10 @@ table{
     border-radius:12px;
 }
 
+.table-container{
+    width:100%;
+    overflow-x:auto;
+}
 thead th{
     background:#1F2937;
     color:white;
@@ -218,26 +222,46 @@ tfoot th{
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width:500px){
+@media (max-width:768px){
 
-    .container{
-        width:95%;
-        padding:18px;
+    .navbar{
+        height:auto;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        padding:20px;
+        gap:15px;
     }
 
-    .container h1{
-        font-size:26px;
+    .navbar h1{
+        margin:0;
+        font-size:28px;
     }
 
     .navbar div{
         display:flex;
         flex-direction:column;
         width:100%;
+        gap:10px;
     }
 
     .navbar a{
         width:100%;
         text-align:center;
+        padding:12px;
+    }
+
+    .container{
+        width:95%;
+        padding:20px;
+    }
+
+    .container h1{
+        font-size:28px;
+    }
+
+    .buttons{
+        flex-direction:column;
     }
 
     .buttons button{
@@ -246,21 +270,10 @@ tfoot th{
 
     .input-box input{
         width:100%;
-        max-width:none;
     }
-
-    table{
-        font-size:13px;
-    }
-
 }
 
-.table-container{
-    width:100%;
-    overflow-x:auto;
-}
 </style>
-</head>
 </head>
 <body>
 
@@ -356,7 +369,7 @@ tfoot th{
 
     <footer class="footer">
 
-        <p>Made with ❤️ by <span>Zunaira Khan</span></p>
+        <p>Created with ❤️ by <span>Zunaira Khan</span></p>
 
     </footer>
 
